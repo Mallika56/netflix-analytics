@@ -1,7 +1,7 @@
 # Netflix Content Analytics
 
 > Analyzing genre trends, ratings, and catalog strategy across Netflix's content library.
-
+> **Companion project:** [Spotify content analytics](https://github.com/Mallika56/spotify-analytics) · **Cross-platform synthesis:** [Content platforms comparison](https://github.com/Mallika56/content-platforms-comparison)
 
 ---
 
