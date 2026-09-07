@@ -113,7 +113,7 @@ df = pd.DataFrame(rows)
 dupes = df.sample(15, random_state=1)
 df = pd.concat([df, dupes], ignore_index=True)
 
-df.to_csv("/home/claude/netflix_titles.csv", index=False)
+df.to_csv("data/netflix_titles_Sample.csv", index=False)
 print(f"Rows: {len(df)}")
 print(f"Nulls per column:\n{df.isnull().sum()}")
 print(f"\nSample:\n{df.head(3).to_string()}")
