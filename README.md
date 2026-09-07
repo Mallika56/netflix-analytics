@@ -31,19 +31,24 @@ additions — to infer what the data reveals about the company's content decisio
 
 ```
 netflix-analytics/
-├── data/        # raw + cleaned data
-├── notebooks/   # the analysis (start here: netflix_analytics_starter.ipynb)
-├── sql/         # saved query files
-├── visuals/     # exported charts
+├── data/              # raw + cleaned data
+├── notebooks/         # the analysis (start here: netflix_analytics_starter.ipynb)
+├── sql/               # saved query files
+├── tests/             # pytest suite for generate_data.py
+├── visuals/           # exported charts
+├── generate_data.py   # builds the synthetic practice dataset
 └── README.md
 ```
 
 ## How to Run
 
 ```bash
-pip install pandas numpy duckdb matplotlib seaborn jupyter
+pip install -r requirements.txt
 jupyter notebook notebooks/netflix_analytics_starter.ipynb
 ```
+
+Regenerate the synthetic practice dataset with `python generate_data.py` (writes
+`data/netflix_titles_Sample.csv`). Run the test suite with `pytest`.
 
 ## Key Findings
 
@@ -77,7 +82,11 @@ the pace of content additions, not measured directly. A companion Spotify analys
 
 ## Data Note
 
-The included `netflix_titles.csv` is a **synthetic sample** generated to mirror the
-structure and messiness of the real Kaggle "Netflix Movies and TV Shows" dataset
-(nulls, mixed date formats, multi-genre strings, mixed duration units). Swap in the
-real Kaggle file to run the same pipeline on actual data.
+`netflix_titles.csv` — the file the notebook actually analyzes, and the source of the
+Key Findings above — is the **real** public Kaggle "Netflix Movies and TV Shows"
+dataset, not synthetic.
+
+`netflix_titles_Sample.csv` is a separate, fully **synthetic** file produced by
+`generate_data.py`. It mirrors the real dataset's structure and messiness (nulls,
+mixed date formats, multi-genre strings, mixed duration units) so the cleaning steps
+can be practiced without the real file, but it is not used by the notebook.
